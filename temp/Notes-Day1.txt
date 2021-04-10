@@ -1,0 +1,115 @@
+
+
+Locations strategies
+
+1. ID
+2. Name
+3. XPath
+4. CSS
+5. Link Text
+6. Partial Link Text
+7. ID or Name
+8. Chained
+9. Custom location strategies
+10. Tagname
+
+
+XPath
+A = B
+B = C
+A = C
+
+XPath is for locating nodes (elements) in XML
+XML and HTML follow same syntax (HTML is a subset of XML)
+XPath can be used for locating elements in HTML (web pages)
+
+
+Absolute path
+/html/body/div[2]/div/div[1]/form/div[2]/input
+
+Long
+Brittle
+No readable
+Not resilient
+
+Relative path
+//form/div[2]/input
+
+Exact Path
+<input class="formInputText validation-error" maxlength="30" type="text" name="firstName" id="firstName">
+1)
+//tagname[@attribute='value']
+//input[@name='firstName']
+//input[@id='firstName']
+//input[@type='text']
+//input[@maxlength='30']
+
+2)
+//*[@attribute='value']
+//*[@id="firstName"]
+//*[@name="firstName"]
+
+3) Locating elements with multiple attributes
+//tagname[@attribute1='value1'][@attribute2='value2']
+
+4) Locating elements with tagname
+//input
+
+5) Locating element with visible text
+//tagname[text(), 'VisbleText']
+//*[text(), 'VisbleText']
+
+//tagname[., 'VisbleText']
+
+
+6) Stars-with function
+
+7) Contains function
+
+
+CSS
+
+1.
+#IDValue
+#txtUsername
+
+2. Classname
+
+3. Class name and tagname
+
+tagname.classname
+
+4. tagname and attribute
+
+tagname[attribute='value']
+
+//tagname[@attribute='value']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

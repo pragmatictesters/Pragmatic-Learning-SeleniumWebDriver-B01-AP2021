@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="hrm-tests">
+
+    <test name="login-tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.pragmatic.hrm.login.LoginTest"></class>
+        </classes>
+    </test>
+
+    <test name="employee-management">
+
+
+    </test>
+
+
+
+</suite>
