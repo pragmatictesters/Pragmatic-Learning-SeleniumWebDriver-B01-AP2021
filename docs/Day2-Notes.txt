@@ -1,0 +1,18 @@
+
+Design Patterns
+
+
+Page Object
+Pages and Tests are separated
+
+Page Factory
+
+
+1. Create two packages (tests and pages )
+2. Start creating a test class
+3. Add before class, before method and after method
+4. Start creating @Test
+5. Add a page (LoginPage) into the test
+6. Create the Page
+7. Define the local variable webDriver
+8.

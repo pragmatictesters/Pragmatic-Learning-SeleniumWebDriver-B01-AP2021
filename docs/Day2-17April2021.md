@@ -1,10 +1,12 @@
 # Day 2 : 17 April 2021
 
-1. Working with JavaScript popups  
+1. Working with JavaScript popups, tabs and frames 
     * Alerts 
     * Confirmation 
     * Prompts 
     * Timing alerts 
+    * iFrames 
+    * Tabs
    
 2. Working with Login popup windows 
 
@@ -37,5 +39,6 @@
    * XPath axes
    * CSS continuation 
    * Locating elements in a given website 
+
    
     
