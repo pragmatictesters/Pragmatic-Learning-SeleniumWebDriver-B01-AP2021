@@ -1,8 +1,7 @@
-package com.pragmatic.hrm.pages;
+package com.pragmatic.hrm.pageobject.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by Pragmatic Test Labs (Private) Limited

@@ -1,16 +1,12 @@
-package com.pragmatic.hrm.tests;
+package com.pragmatic.hrm.pageobject.tests;
 
 import com.pragmatic.hrm.BrowserManager;
 import com.pragmatic.hrm.TestBase;
-import com.pragmatic.hrm.pages.LandingPage;
-import com.pragmatic.hrm.pages.LoginPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
+import com.pragmatic.hrm.pageobject.pages.LandingPage;
+import com.pragmatic.hrm.pageobject.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
