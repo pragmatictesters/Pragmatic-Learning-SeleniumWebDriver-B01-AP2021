@@ -18,7 +18,6 @@ import org.testng.annotations.Test;
 public class LoginTest  extends  TestBase{
 
 
-    private static final String BASE_URL = "http://hrm.pragmatictestlabs.com/";
     private WebDriver webDriver;
 
 
@@ -27,7 +26,7 @@ public class LoginTest  extends  TestBase{
     @BeforeMethod
     public void beforeMethod() {
         webDriver = BrowserManager.getBrowser();
-        webDriver.get(BASE_URL);
+
     }
 
 
@@ -39,6 +38,7 @@ public class LoginTest  extends  TestBase{
     @Test
     public void testValidUserLogin() {
         LoginPage loginPage = new LoginPage(webDriver);
+        loginPage.get();
         loginPage.clearAndTypeUsername("Admin")
                 .clearAndTypePassword("Ptl@#321")
                 .clickLogin();
@@ -51,6 +51,8 @@ public class LoginTest  extends  TestBase{
     @Test
     public void testLoginWithBlankUsernameAndPassword() {
         LoginPage loginPage = new LoginPage(webDriver);
+        loginPage.get();
+        loginPage.waitForPageToBeReady();
         loginPage.clearUsername().clearPassword().clickLogin();
         String errorMessage = loginPage.getError();
         Assert.assertEquals(errorMessage, "Username cannot be empty");
@@ -60,6 +62,7 @@ public class LoginTest  extends  TestBase{
     @Test
     public void testLoginWithBlankPassword() {
         LoginPage loginPage = new LoginPage(webDriver);
+        loginPage.get();
         loginPage.clearAndTypeUsername("Admin").clearPassword().clickLogin();
         String errorMessage = loginPage.getError();
         Assert.assertEquals(errorMessage, "Password cannot be empty");
@@ -68,6 +71,7 @@ public class LoginTest  extends  TestBase{
     @Test
     public void testLoginWithInvalidCredentials() {
         LoginPage loginPage = new LoginPage(webDriver);
+        loginPage.get();
         loginPage.clearAndTypeUsername("Admin")
                 .clearAndTypePassword("Invalid")
                 .clickLogin();

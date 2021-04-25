@@ -77,7 +77,6 @@ public class AddNewEmployee {
         String lastName = faker.name().lastName();
 
         driver.findElement(By.id("firstName")).sendKeys(firstName);
-        //TODO : Introduce Java Faker for random input data
 
         //Type last name
         driver.findElement(By.id("lastName")).sendKeys(lastName);
@@ -99,7 +98,6 @@ public class AddNewEmployee {
         String lastName = faker.name().lastName();
 
         driver.findElement(By.id("firstName")).sendKeys(firstName);
-        //TODO : Introduce Java Faker for random input data
 
         //Type last name
         driver.findElement(By.id("lastName")).sendKeys(lastName);
@@ -128,7 +126,6 @@ public class AddNewEmployee {
         String username = firstName ;
 
         driver.findElement(By.id("firstName")).sendKeys(firstName);
-        //TODO : Introduce Java Faker for random input data
 
         //Type last name
         driver.findElement(By.id("lastName")).sendKeys(lastName);

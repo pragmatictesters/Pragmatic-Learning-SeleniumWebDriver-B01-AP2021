@@ -18,7 +18,7 @@
 4. Cross browser testing 
    * Headless testing (Chrome and Firefox)
    * Security and Zoom level settings in Internet Explorer 
-   * 
+   * [Driver Specific Capabilities](https://www.selenium.dev/documentation/en/driver_idiosyncrasies/driver_specific_capabilities/)
    
 5. Location Strategies (Part 2)
    * XPath axes

@@ -2,6 +2,7 @@ package com.pragmatic.hrm.login;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -100,6 +101,20 @@ public class LoginTest {
         driver.findElement(By.id("txtUsername")).clear();
         driver.findElement(By.id("txtPassword")).clear();
        driver.findElement(By.id("txtPassword")).submit();
+
+        //Verify the error message
+        String txtError = driver.findElement(By.id("spanMessage")).getText();
+        Thread.sleep(5000);
+        Assert.assertEquals(txtError, "Username cannot be empty");
+
+    }
+
+    @Test (priority = 1, groups = {"regression"})
+    public void testPressingEnterKey() throws InterruptedException {
+        driver.findElement(By.id("txtUsername")).clear();
+        driver.findElement(By.id("txtUsername")).sendKeys(Keys.TAB);
+        driver.findElement(By.id("txtPassword")).clear();
+       driver.findElement(By.id("txtPassword")).sendKeys(Keys.ENTER);
 
         //Verify the error message
         String txtError = driver.findElement(By.id("spanMessage")).getText();

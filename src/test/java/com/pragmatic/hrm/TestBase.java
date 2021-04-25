@@ -9,9 +9,9 @@ import org.testng.annotations.BeforeSuite;
  */
 public class TestBase {
 
-
     @BeforeSuite
     public void beforeSuite(){
+        BrowserManager.setBrowserType("headless-chrome");
         BrowserManager.setup();
     }
 
