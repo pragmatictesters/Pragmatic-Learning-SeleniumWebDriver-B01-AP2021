@@ -1,5 +1,6 @@
 package com.pragmatic.hrm.login;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -10,11 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-/**
- * Created by Pragmatic Test Labs (Private) Limited
- *
- * @Author Janesh Kodikara
- */
 public class LoginTest {
 
     public static final String BASE_URL = "http://hrm.pragmatictestlabs.com";

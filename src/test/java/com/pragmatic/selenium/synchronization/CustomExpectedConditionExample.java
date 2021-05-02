@@ -99,7 +99,7 @@ public class CustomExpectedConditionExample {
         @Override
         public Boolean apply(@NullableDecl WebDriver webDriver) {
             int newHeight = webDriver.findElement(locator).getSize().height; //get the current height of the element
-            System.out.println("New height %d , last height %d ".formatted(newHeight, lastHeight));
+            //System.out.println("New height %d , last height %d ".formatted(newHeight, lastHeight));
             System.out.println(new Date().getTime());
             if (newHeight > lastHeight) {
                 lastHeight = newHeight;
@@ -120,7 +120,7 @@ public class CustomExpectedConditionExample {
                 @Override
                 public Boolean apply(@NullableDecl WebDriver webDriver) {
                     int newHeight = webDriver.findElement(expandingElement).getSize().height;
-                    System.out.println("New height %d , last height %d ".formatted(newHeight, lastHeight));
+                   // System.out.println("New height %d , last height %d ".formatted(newHeight, lastHeight));
 
 
                     if (newHeight> lastHeight){

@@ -32,6 +32,4 @@ public class BeerCans {
         System.out.println("BeerCans.iShouldHaveInStockBeerCans");
     }
 
-
-
 }

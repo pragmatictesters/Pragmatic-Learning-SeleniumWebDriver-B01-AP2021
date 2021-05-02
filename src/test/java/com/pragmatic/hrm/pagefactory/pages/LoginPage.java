@@ -22,12 +22,15 @@ public class LoginPage {
     @FindBy(css = "#btnLogin")
     WebElement eleLoginButton;
 
-    private final WebDriver webDriver;
+    @FindBy(css = "#spanMessage")
+    WebElement eleError;
 
+    private final WebDriver webDriver;
 
     public LoginPage(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
+        webDriver.get("http://hrm.pragmatictestlabs.com/");
     }
 
     public LoginPage typeUsername(String username) {
@@ -40,8 +43,41 @@ public class LoginPage {
         return this;
     }
 
-    public void clickLogin(){
+    public void clickLogin() {
         eleLoginButton.click();
     }
 
+    public LoginPage clearAndTypeUsername(String username) {
+        clearUsername();
+        typeUsername(username);
+        return this;
+    }
+
+    public LoginPage clearUsername() {
+        eleUsername.clear();
+        return this;
+    }
+
+    public LoginPage clearAndTypePassword(String password) {
+        clearPassword();
+        typePassword(password);
+        return this;
+    }
+
+    public LoginPage clearPassword() {
+        elePassword.clear();
+        return this;
+    }
+
+    public String getError() {
+        String strError = eleError.getText();
+        return strError;
+    }
+
+    public LoginPage login(String username, String password) {
+        clearAndTypeUsername(username);
+        clearAndTypePassword(password);
+        clickLogin();
+        return this;
+    }
 }

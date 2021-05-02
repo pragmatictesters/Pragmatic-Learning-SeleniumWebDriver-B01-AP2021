@@ -3,21 +3,9 @@
 <suite name="hrm-tests">
 
     <test name="login-tests">
-        <groups>
-            <run>
-                <include name="smoke"/>
-            </run>
-        </groups>
         <classes>
-            <class name="com.pragmatic.hrm.login.LoginTest"></class>
+            <class name="com.pragmatic.cucumber.TestRunnerTestNG"></class>
         </classes>
     </test>
-
-    <test name="employee-management">
-
-
-    </test>
-
-
 
 </suite>

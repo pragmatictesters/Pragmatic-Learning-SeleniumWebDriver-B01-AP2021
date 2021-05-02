@@ -1,5 +1,6 @@
 package com.pragmatic.hrm;
 
+import io.cucumber.java.Before;
 import org.testng.annotations.BeforeSuite;
 
 /**
@@ -9,8 +10,9 @@ import org.testng.annotations.BeforeSuite;
  */
 public class TestBase {
 
+
     @BeforeSuite
-    public void beforeSuite(){
+    public void beforeSuite() {
         BrowserManager.setBrowserType("headless-chrome");
         BrowserManager.setup();
     }

@@ -4,12 +4,16 @@ import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Pragmatic Test Labs (Private) Limited
@@ -38,7 +42,7 @@ public class AddNewEmployee {
     @BeforeMethod
     public void beforeMethod() {
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver,30);
+        wait = new WebDriverWait(driver, 30);
         driver.get(BASE_URL);
         driver.manage().window().maximize();
         loginToHRM();
@@ -48,7 +52,7 @@ public class AddNewEmployee {
 
     @AfterMethod
     public void afterMethod() {
-        //driver.close();
+        driver.close();
     }
 
 
@@ -64,10 +68,8 @@ public class AddNewEmployee {
         //Click PIM menu item
         driver.findElement(By.id("menu_pim_viewPimModule")).click();
 
-
         //Click Add employee menu item when it is clickable. Wait at most 10 second till it is clickable
         wait.until(ExpectedConditions.elementToBeClickable(By.id("menu_pim_addEmployee"))).click();
-
     }
 
     @Test
@@ -87,7 +89,43 @@ public class AddNewEmployee {
         //Verify the saved information
         String savedFirstName = driver.findElement(By.id("personal_txtEmpFirstName")).getAttribute("value");
         Assert.assertEquals(savedFirstName, firstName);
+    }
 
+    @Test
+    public void testAddEmployeeWithExistingEmployeeID() {
+        //Type first name
+        String firstName = faker.name().firstName();
+        String lastName = faker.name().lastName();
+        String existingEmployeeID = "2000";
+
+        driver.findElement(By.id("firstName")).sendKeys(firstName);
+
+        //Type last name
+        driver.findElement(By.id("lastName")).sendKeys(lastName);
+
+        //Set existing employee ID
+        driver.findElement(By.id("employeeId")).clear();
+        driver.findElement(By.id("employeeId")).sendKeys(existingEmployeeID);
+
+        //Click Save
+        driver.findElement(By.id("btnSave")).click();
+
+        //Verify the Error message
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement eleWarning = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#addEmployeeTbl div.message.warning")));
+        String warning = eleWarning.getText();
+        Assert.assertTrue(warning.contains("Failed To Save: Employee Id Exists"));
+
+        //wait.until(ExpectedConditions.invisibilityOf(eleWarning));
+        /*  List<WebElement> elements = new ArrayList<WebElement>();
+        elements.add(eleWarning);
+        wait.until(ExpectedConditions.invisibilityOfAllElements(elements));*/
+        //wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#addEmployeeTbl div.message.warning")));
+        wait.until(ExpectedConditions.invisibilityOfElementWithText(
+                By.cssSelector("#addEmployeeTbl div.message.warning"),
+                "Failed To Save: Employee Id Exists")
+        );
+        wait.until(ExpectedConditions.invisibilityOfAllElements(eleWarning, eleWarning));
     }
 
 
@@ -113,9 +151,7 @@ public class AddNewEmployee {
         //Verify the saved information
         String savedFirstName = driver.findElement(By.id("personal_txtEmpFirstName")).getAttribute("value");
         Assert.assertEquals(savedFirstName, firstName);
-
     }
-
 
 
     @Test
@@ -123,7 +159,7 @@ public class AddNewEmployee {
         //Type first name
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
-        String username = firstName ;
+        String username = firstName;
 
         driver.findElement(By.id("firstName")).sendKeys(firstName);
 
@@ -160,13 +196,6 @@ public class AddNewEmployee {
         //TODO : Check if new user can login to the system
 
     }
-
-
-
-
-
-
-
 
 
 }

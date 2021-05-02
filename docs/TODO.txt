@@ -1,0 +1,4 @@
+TODO 1 : Create a website in github.io for Selenium Demo
+TODO 2 : Download source for Selenium to view code for support classes
+TO[DONE] 3 : Create a live template with basic test structure
+TODO 4 : Check accessing elements within head element using location strategies

@@ -38,11 +38,4 @@ public class LoginTest  extends TestBase {
         String welcomeMessage = landingPage.getWelcomeMessage();
         Assert.assertEquals(welcomeMessage, "Welcome Admin");
       }
-
-
-
-
-
-
-
 }

@@ -1,0 +1,29 @@
+
+
+Selenium Cucumber Integration
+1. Add the Plugins to the IDE
+   Cucumber Java , Gherkin
+
+2. Add the cucumber-java maven dependency
+
+3. Create a folder "resources" inside src/test/features folder
+    Ensure you mark it as a resource folder
+
+4. Quick setup verification
+Create a file test.feature inside features and check if you get the feature file icon (green)
+
+5. Create a package for the step definition files
+
+6. Create Feature file
+
+7. Add scenario(s) and steps into the feature file
+
+Note : Auto completion feature from IDEA should be capitalized
+
+
+<input value="Firstname1" type="text" name="personal[txtEmpFirstName]" class="block default editable" maxlength="30" title="First Name" id="personal_txtEmpFirstName" disabled="disabled">
+
+
+
+
+

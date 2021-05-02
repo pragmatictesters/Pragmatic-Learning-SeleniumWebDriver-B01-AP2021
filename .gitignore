@@ -1,2 +1,5 @@
 /.idea/
 /target/
+/src/test/java/com/pragmatic/tmp/
+/temp/
+/lib/
