@@ -17,18 +17,13 @@ import org.testng.annotations.Test;
  */
 public class LoginTest  extends  TestBase{
 
-
     private WebDriver webDriver;
-
-
-
 
     @BeforeMethod
     public void beforeMethod() {
         webDriver = BrowserManager.getBrowser();
 
     }
-
 
     @AfterMethod
     public void afterMethod() {

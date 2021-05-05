@@ -15,7 +15,10 @@ import io.cucumber.testng.CucumberOptions;
         glue = {"com.pragmatic.cucumber"},
         dryRun = true,
         monochrome = false,
-        plugin = {"pretty", "summary", "html:target/cucumber.html"}
+        plugin = {"pretty", "summary",
+                "html:target/cucumber.html",
+                 "json:target/cucumber.json"
+        }
 )
 public class TestRunnerTestNG extends AbstractTestNGCucumberTests {
 
