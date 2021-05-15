@@ -2,9 +2,28 @@
 
 <suite name="hrm-tests">
 
-    <test name="login-tests">
+
+    <test  name="chrome-tests" >
+        <parameter name="browser-name" value="chrome"/>
+
         <classes>
-            <class name="com.pragmatic.cucumber.TestRunnerTestNG"></class>
+            <class name="com.pragmatic.hrm.pagefactory.tests.LoginTest">
+                <methods>
+                    <include name="testLoginWithValidCredentials"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="chrome-headless-tests">
+        <parameter name="browser-name" value="headless-chrome"/>
+        <classes>
+            <class name="com.pragmatic.hrm.pagefactory.tests.LoginTest">
+                <methods>
+                    <include name="testLoginWithValidCredentials"/>
+                </methods>
+            </class>
         </classes>
     </test>
 

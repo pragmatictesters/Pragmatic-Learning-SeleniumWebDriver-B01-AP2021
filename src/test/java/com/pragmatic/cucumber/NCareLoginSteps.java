@@ -2,6 +2,7 @@ package com.pragmatic.cucumber;
 
 import com.pragmatic.help.pages.NCareLoginPage;
 import com.pragmatic.hrm.BrowserManager;
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,6 +19,13 @@ public class NCareLoginSteps {
 
     private WebDriver driver;
     private NCareLoginPage loginPage;
+
+    @After
+    public void after(){
+        if (driver!=null){
+            driver.close();
+        }
+    }
 
     @Given("I have setup the browser driver {string}")
     public void iHaveSetupTheBrowserDriver(String browserName) {

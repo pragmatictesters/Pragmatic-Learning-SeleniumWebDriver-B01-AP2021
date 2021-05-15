@@ -1,0 +1,27 @@
+
+Test automation framework development
+-- Custom framework for our requirement
+
+Examples
+Selenide
+
+Test reporting
+
+
+Integrating logs into selenium
+
+
+DDT
+- Read the data from external (Selenium) source
+- We can test new behaviors with new input
+- Cucumber Scenarios/Examples
+- TestNG @Data
+
+Notifications
+
+
+Interacting with DB
+
+
+BDD Implementation
+

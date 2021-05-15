@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 /**
  * Created by Pragmatic Test Labs (Private) Limited
  *
@@ -39,6 +41,7 @@ public class NCareLoginPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, 10);
+        wait.pollingEvery(Duration.ofMillis(10));
     }
 
 
@@ -93,21 +96,22 @@ public class NCareLoginPage {
 
         public  TextIsPresentInElement(By locator) {
             this.locator = locator;
-
         }
-
-
+        
         @Override
         public Boolean apply(@NullableDecl WebDriver driver) {
             boolean isErrorLoaded = false;
-
             boolean isElementPresent = false;
             boolean isErrorPresent = false;
+
             try {
                 isElementPresent = driver.findElement(locator).isDisplayed();
+                System.out.println("isElementPresent = " + isElementPresent);
                 isErrorPresent = driver.findElement(locator).getText().trim().length() >0;
+                System.out.println("isErrorPresent = " + isErrorPresent);
             } catch (Exception e) {
                 //e.printStackTrace();
+                System.out.println("e.toString() = " + e.toString());
             }
 
             if (isElementPresent && isErrorPresent) {
